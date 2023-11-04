@@ -1,5 +1,5 @@
 return {
-	"jay-babu/mason-nvim-dap.nvim", -- dap installer
+	"mfussenegger/nvim-dap", -- dap installer
 	lazy = false,
 	enabled = true,
 	dependencies = {
@@ -16,6 +16,12 @@ return {
 		dap.defaults.fallback.exception_breakpoints = { "all" }
 
 		dap.adapters.lldb = {
+			type = "executable",
+			command = "/usr/local/opt/llvm/bin/lldb-vscode",
+			name = "lldb",
+		}
+
+		dap.adapters.codelldb = {
 			type = "executable",
 			command = "/usr/local/opt/llvm/bin/lldb-vscode",
 			name = "lldb",

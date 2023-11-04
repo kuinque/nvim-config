@@ -8,7 +8,6 @@ return {
 	"MunifTanjim/nui.nvim",
 	"VonHeikemen/fine-cmdline.nvim", -- cool cmd in the middle of the screen
 
-	"mfussenegger/nvim-dap", -- debugger
 	"theHamsta/nvim-dap-virtual-text", -- fine-text
 
 	"Civitasv/cmake-tools.nvim", -- cmake
