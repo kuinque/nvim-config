@@ -94,7 +94,7 @@ return {
 		vim.keymap.set("n", "<Leader>dl", function()
 			require("dap").run_last()
 		end)
-		vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
+		vim.keymap.set({ "n", "v" }, "<Leader>dw", function()
 			require("dap.ui.widgets").hover()
 		end)
 		vim.keymap.set({ "n", "v" }, "<Leader>dp", function()

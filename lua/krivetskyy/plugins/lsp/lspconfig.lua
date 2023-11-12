@@ -17,13 +17,7 @@ return {
 		local opts = {
 			noremap = true,
 			silent = true,
-			servers = {
-				texlab = {
-					keys = {
-						{ "<Leader>K", "<plug>(vimtex-doc-package)", desc = "Vimtex Docs", silent = true },
-					},
-				},
-			},
+			inlay_hints = { enabled = true },
 		}
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
@@ -54,7 +48,7 @@ return {
 			keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
 			opts.desc = "Show line diagnostics"
-			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+			keymap.set("n", "<leader>dd", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
 			opts.desc = "Go to previous diagnostic"
 			keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
@@ -203,6 +197,9 @@ return {
 							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 							[vim.fn.stdpath("config") .. "/lua"] = true,
 						},
+					},
+					hint = {
+						enable = true,
 					},
 				},
 			},
