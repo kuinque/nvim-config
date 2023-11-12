@@ -5,10 +5,8 @@ return {
 
 	"inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 
-	"MunifTanjim/nui.nvim",
+	"MunifTanjim/nui.nvim", -- needed for cmd
 	"VonHeikemen/fine-cmdline.nvim", -- cool cmd in the middle of the screen
-
-	"theHamsta/nvim-dap-virtual-text", -- fine-text
 
 	"Civitasv/cmake-tools.nvim", -- cmake
 
