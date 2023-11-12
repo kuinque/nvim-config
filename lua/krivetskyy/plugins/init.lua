@@ -11,4 +11,6 @@ return {
 	"theHamsta/nvim-dap-virtual-text", -- fine-text
 
 	"Civitasv/cmake-tools.nvim", -- cmake
+
+	"tanvirtin/vgit.nvim", -- visual ui for git
 }
