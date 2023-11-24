@@ -17,7 +17,6 @@ return {
 		local opts = {
 			noremap = true,
 			silent = true,
-			inlay_hints = { enabled = true },
 		}
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
@@ -80,11 +79,11 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- configure pyre server
-		lspconfig["pyre"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
+		-- -- configure pyre server
+		-- lspconfig["pyre"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		-- configure texlab server
 		lspconfig["texlab"].setup({
