@@ -79,7 +79,7 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- -- configure pyre server
+		-- configure pyre server
 		-- lspconfig["pyre"].setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,

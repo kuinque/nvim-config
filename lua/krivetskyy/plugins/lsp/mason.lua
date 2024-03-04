@@ -38,7 +38,7 @@ return {
 				"pyright",
 				"texlab",
 				"clangd",
-				"lua_ls",
+				-- "lua_ls",
 				"pyre",
 			},
 			-- auto-install configured servers (with lspconfig)
@@ -55,6 +55,7 @@ return {
 				"cmakelang", -- cmake formatter
 				"latexindent", -- latex formatter
 				"pylint", -- python linter
+				"pyre", -- python linter
 				"eslint_d", -- js linter
 			},
 		})

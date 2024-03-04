@@ -30,6 +30,7 @@ return {
 					"cmake",
 					"lua",
 					"vim",
+					-- "vimdoc",
 					"dockerfile",
 					"gitignore",
 				},
