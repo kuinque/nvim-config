@@ -8,7 +8,7 @@ return {
 	"MunifTanjim/nui.nvim", -- needed for cmd
 	"VonHeikemen/fine-cmdline.nvim", -- cool cmd in the middle of the screen
 
-	"Civitasv/cmake-tools.nvim", -- cmake
+	-- "Civitasv/cmake-tools.nvim", -- cmake
 
 	"tanvirtin/vgit.nvim", -- visual ui for git
 }

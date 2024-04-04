@@ -75,9 +75,28 @@ return {
 
 		-- configure clangd server
 		lspconfig["clangd"].setup({
+			-- cmd = {
+			-- 	"clangd",
+			-- 	"--clang-tidy",
+			-- 	"--background-index",
+			-- 	"--pch-storage=memory",
+			-- 	"--fallback-style=llvm",
+			-- 	"--header-insertion=never",
+			-- 	"--completion-style=detailed",
+			-- 	"--function-arg-placeholders",
+			-- 	"--compile-commands-dir=./build",
+			-- },
+
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+		-- lspconfig.clangd.setup({
+		-- 	on_attach = function(client, bufnr)
+		-- 		client.server_capabilities.signatureHelpProvider = false
+		-- 		on_attach(client, bufnr)
+		-- 	end,
+		-- 	capabilities = capabilities,
+		-- })
 
 		-- configure pyre server
 		-- lspconfig["pyre"].setup({

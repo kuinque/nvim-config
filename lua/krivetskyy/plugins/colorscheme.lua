@@ -1,10 +1,26 @@
 return {
+	-- {
+	-- 	"bluz71/vim-nightfly-guicolors",
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- load the colorscheme here
+	-- 		vim.cmd([[colorscheme nightfly]])
+	-- 	end,
+	-- },
+	-- {
+	-- 	"savq/melange-nvim",
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		-- load the colorscheme here
+	-- 		vim.cmd([[colorscheme melange]])
+	-- 	end,
+	-- },
 	{
-		"bluz71/vim-nightfly-guicolors",
+		"arzg/vim-colors-xcode",
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			-- load the colorscheme here
-			vim.cmd([[colorscheme nightfly]])
+			vim.cmd([[colorscheme xcodehc]])
 		end,
 	},
 	-- {
@@ -12,8 +28,44 @@ return {
 	-- 	priority = 1000, -- make sure to load this before all the other start plugins
 	-- 	config = function()
 	-- 		-- load the colorscheme here
+	-- 		require("gruvbox").setup({
+	-- 			termguicolors = true,
+	-- 			terminal_colors = false, -- add neovim terminal colors
+	-- 			undercurl = true,
+	-- 			underline = true,
+	-- 			bold = true,
+	-- 			italic = {
+	-- 				strings = true,
+	-- 				emphasis = true,
+	-- 				comments = true,
+	-- 				operators = false,
+	-- 				folds = true,
+	-- 			},
+	-- 			strikethrough = true,
+	-- 			invert_selection = false,
+	-- 			invert_signs = false,
+	-- 			invert_tabline = false,
+	-- 			invert_intend_guides = false,
+	-- 			inverse = true, -- invert background for search, diffs, statuslines and errors
+	-- 			contrast = "", -- can be "hard", "soft" or empty string
+	-- 			palette_overrides = {},
+	-- 			overrides = {},
+	-- 			dim_inactive = false,
+	-- 			transparent_mode = false,
+	-- 			gruvbox_contrast_light = "soft",
+	-- 		})
 	-- 		vim.cmd([[colorscheme gruvbox]])
 	-- 	end,
+	-- },
+	-- { "ellisonleao/gruvbox.nvim" },
+	--
+	-- -- Configure LazyVim to load gruvbox
+	-- {
+	-- 	"LazyVim/LazyVim",
+	-- 	opts = {
+	-- 		style = "light",
+	-- 		colorscheme = "gruvbox",
+	-- 	},
 	-- },
 	-- {
 	-- 	"folke/tokyonight.nvim",

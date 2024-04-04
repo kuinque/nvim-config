@@ -1,5 +1,6 @@
 return {
 	"mfussenegger/nvim-dap", -- dap installer
+	"nvim-neotest/nvim-nio", -- fuck this plug
 	lazy = false,
 	enabled = true,
 	dependencies = {
@@ -35,13 +36,13 @@ return {
 
 		dap.adapters.lldb = {
 			type = "executable",
-			command = "/usr/local/opt/llvm/bin/lldb-vscode",
+			command = "/usr/local/Cellar/llvm/17.0.6_1/bin/lldb-vscode",
 			name = "lldb",
 		}
 
 		dap.adapters.codelldb = {
 			type = "executable",
-			command = "/usr/local/opt/llvm/bin/lldb-vscode",
+			command = "/usr/local/Cellar/llvm/17.0.6_1/bin/lldb-vscode",
 			name = "lldb",
 		}
 
