@@ -36,13 +36,13 @@ return {
 
 		dap.adapters.lldb = {
 			type = "executable",
-			command = "/usr/local/Cellar/llvm/17.0.6_1/bin/lldb-vscode",
+			command = "/usr/local/opt/llvm/bin/lldb-vscode",
 			name = "lldb",
 		}
 
 		dap.adapters.codelldb = {
 			type = "executable",
-			command = "/usr/local/Cellar/llvm/17.0.6_1/bin/lldb-vscode",
+			command = "/usr/local/opt/llvm/bin/lldb-vscode",
 			name = "lldb",
 		}
 

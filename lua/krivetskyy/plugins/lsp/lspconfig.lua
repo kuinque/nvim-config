@@ -18,7 +18,24 @@ return {
 			noremap = true,
 			silent = true,
 		}
+
 		local on_attach = function(client, bufnr)
+			-- inlay hints
+			vim.g.inlay_hints_visible = false
+			local function toggle_inlay_hints()
+				if vim.g.inlay_hints_visible then
+					vim.g.inlay_hints_visible = false
+					vim.lsp.inlay_hint(bufnr, false)
+				else
+					if client.server_capabilities.inlayHintProvider then
+						vim.g.inlay_hints_visible = true
+						vim.lsp.inlay_hint(bufnr, true)
+					else
+						print("no inlay hints available")
+					end
+				end
+			end
+
 			opts.buffer = bufnr
 
 			-- set keybinds
@@ -26,16 +43,28 @@ return {
 			keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
 			opts.desc = "Go to declaration"
-			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+			-- keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+			vim.keymap.set("n", "gD", function()
+				vim.lsp.buf.declaration()
+			end, opts)
 
 			opts.desc = "Show LSP definitions"
-			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+			-- keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+			vim.keymap.set("n", "gd", function()
+				vim.lsp.buf.definition()
+			end, opts)
 
 			opts.desc = "Show LSP implementations"
-			keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+			-- keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+			vim.keymap.set("n", "gi", function()
+				vim.lsp.buf.implementation()
+			end, opts)
 
 			opts.desc = "Show LSP type definitions"
-			keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+			-- keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+			vim.keymap.set("n", "gt", function()
+				vim.lsp.buf.type_definition()
+			end, opts)
 
 			opts.desc = "See available code actions"
 			keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
@@ -60,6 +89,9 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			opts.desc = "toggle inlay_hint"
+			keymap.set("n", "<leader>td", toggle_inlay_hints, opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -90,6 +122,7 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+
 		-- lspconfig.clangd.setup({
 		-- 	on_attach = function(client, bufnr)
 		-- 		client.server_capabilities.signatureHelpProvider = false
