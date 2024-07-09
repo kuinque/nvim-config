@@ -123,6 +123,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["cmake"].setup({
+			filetypes = { "cmake", "CMakeLists.txt" },
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- lspconfig.clangd.setup({
 		-- 	on_attach = function(client, bufnr)
 		-- 		client.server_capabilities.signatureHelpProvider = false
