@@ -14,7 +14,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 		keymap.set(
 			"n",
-			"<leader>hv",
+			"<leader>ht",
 			"<cmd>help vimtex-default-mappings<cr>",
 			{ desc = "call help vimtex-default-mappings" }
 		)
