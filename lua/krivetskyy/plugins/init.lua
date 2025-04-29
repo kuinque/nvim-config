@@ -11,4 +11,5 @@ return {
 	-- "Civitasv/cmake-tools.nvim", -- cmake
 
 	"tanvirtin/vgit.nvim", -- visual ui for git
+    "tpope/vim-fugitive", -- plugin for git
 }

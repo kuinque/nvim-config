@@ -30,6 +30,7 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+keymap.set("n", "<leader>tm", "<cmd>tabmove<CR>", { desc = "Swap tab with right tab" }) --  swap tab with right tab
 
 -- plugin keymaps
 
@@ -51,3 +52,11 @@ keymap.set("n", "cr", ":CMakeRun<CR>") -- mapping to restart lsp if necessary
 -- fine cmd line
 -- keymap.set('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
 -- keymap.set('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+
+-- for nvim notify dissmis
+keymap.set(
+	"n",
+	"<leader>nd",
+	"<cmd>lua require('notify').dismiss()<cr>",
+	{ noremap = true, silent = true, desc = "dismiss nvim notify" }
+)
