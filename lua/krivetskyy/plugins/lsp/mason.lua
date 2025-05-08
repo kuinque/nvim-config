@@ -40,7 +40,7 @@ return {
 				"clangd",
 				"lua_ls",
 				"pyre",
-                "cmake-language-server",
+                -- "cmake-language-server",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
